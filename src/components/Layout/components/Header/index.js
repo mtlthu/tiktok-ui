@@ -19,12 +19,26 @@ import 'tippy.js/dist/tippy.css'; // optional
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '../../AccountItem';
 import Menu from '~/components/Popper/Menu';
+import MenuItem from '~/components/Popper/Menu/MenuItem';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tieng Viet',
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -45,6 +59,8 @@ function Header() {
     }, 3000);
   }, []);
 
+  //handle logic
+  const handleMenuChange = (menuItem) => {};
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -84,7 +100,7 @@ function Header() {
           <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
             Log in
           </Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
