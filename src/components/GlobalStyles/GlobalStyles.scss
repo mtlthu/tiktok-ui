@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,700&display=swap');
 
 :root {
   --primary: #fe2c55;
@@ -23,8 +23,9 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Roboto Flex', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
+  // font-family: 'Roboto Flex',  sans-serif;
+  font-family: 'font-proxima-nova', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -39,4 +40,28 @@ input,
 a[href] {
   color: var(--text-color);
   text-decoration: none;
+}
+
+//font emnbeded
+
+body {
+  .tippy-box {
+    border-radius: 8px;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    background-color: rgba(84, 84, 84, 0.92);
+  }
+
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
+
+  .tippy-content {
+    padding: 8px 9px;
+  }
+
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+    top: -8px;
+  }
 }

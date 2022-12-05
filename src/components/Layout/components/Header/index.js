@@ -25,6 +25,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/Layout/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
@@ -153,10 +154,11 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/e6fbccfe920afeb2bdfabdfb472dda06~c5_720x720.jpeg?x-expires=1669874400&x-signature=CirrUjfFicAZOsebJZGP3aKXHoM%3D"
+              <Image
+                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/e6fbccfe920afeb2bdfabdfb472dda06~c5_720x720.jpeg?x-expires=1669874400&x-signature=CirrUjfFicAZOsebJZGP3aKXHoM%3D1"
                 className={cx('user-avatar')}
                 alt="Nguyen van a"
+                fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
               />
             ) : (
               <button className={cx('more-btn')}>
