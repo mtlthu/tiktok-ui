@@ -6,6 +6,7 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 
 function MenuItem({ data, onClick }) {
+  console.log('MenuItem:', data);
   const classes = cx('menu-item', {
     separate: data.separate,
   });
